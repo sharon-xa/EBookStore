@@ -28,7 +28,16 @@ const Dashboard = () => {
   }, []);
 
   const handleEdit = async (id) => {
-    // Edit logic
+    setShowModal(true);
+    setFormData({
+      title: "",
+      author: "",
+      pages: "",
+      genre: "",
+      description: "",
+      image: "",
+      link: "",
+    });
   };
 
   const handleDelete = async (id) => {
@@ -41,7 +50,6 @@ const Dashboard = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
-    // Clear form data when modal is closed
     setFormData({
       title: '',
       author: '',
@@ -63,9 +71,8 @@ const Dashboard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add form submit logic here, including API call
     console.log(formData);
-    handleCloseModal(); // Close modal after submitting form
+    handleCloseModal(); 
   };
 
   return (
@@ -78,32 +85,32 @@ const Dashboard = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="title" className="block text-gray-700 font-bold mb-2">Title:</label>
-            <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} className="border rounded-md px-3 py-2 w-full" />
+            <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
             <label htmlFor="width" className="block text-gray-700 font-bold mb-2">Author:</label>
-            <input type="text" id="width" name="width" value={formData.author} onChange={handleChange} className="border rounded-md px-3 py-2 w-full" />
+            <input type="text" id="width" name="width" value={formData.author} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
             <label htmlFor="width" className="block text-gray-700 font-bold mb-2">pages:</label>
-            <input type="text" id="width" name="width" value={formData.pages} onChange={handleChange} className="border rounded-md px-3 py-2 w-full" />
+            <input type="text" id="width" name="width" value={formData.pages} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
             <label htmlFor="width" className="block text-gray-700 font-bold mb-2">genre:</label>
-            <input type="text" id="width" name="width" value={formData.genre} onChange={handleChange} className="border rounded-md px-3 py-2 w-full" />
+            <input type="text" id="width" name="width" value={formData.genre} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
             <label htmlFor="width" className="block text-gray-700 font-bold mb-2">description:</label>
-            <input type="text" id="width" name="width" value={formData.description} onChange={handleChange} className="border rounded-md px-3 py-2 w-full" />
+            <input type="text" id="width" name="width" value={formData.description} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
             <label htmlFor="width" className="block text-gray-700 font-bold mb-2">image:</label>
-            <input type="text" id="width" name="width" value={formData.image} onChange={handleChange} className="border rounded-md px-3 py-2 w-full" />
+            <input type="text" id="width" name="width" value={formData.image} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           
           <div className="mb-4">
             <label htmlFor="link" className="block text-gray-700 font-bold mb-2">Link (File):</label>
-            <input type="file" id="link" name="link" onChange={handleChange} className="border rounded-md px-3 py-2 w-full" />
+            <input type="file" id="link" name="link" onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="flex justify-end">
             <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Submit</button>
