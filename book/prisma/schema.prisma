@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://digital_library_xwqe_user:K9OStIrQ0opELHjcngLO1htXEIcnOcms@dpg-coj4ek0cmk4c73aejt10-a.frankfurt-postgres.render.com/digital_library_xwqe"
+}
+model Books {
+  id          Int      @id @default(autoincrement())
+  title       String
+  author      String
+  pages       Int
+  genre       String
+  description String
+  image       String
+  link        String
+}
