@@ -25,19 +25,12 @@ const Dashboard = () => {
       .catch(error => {
         console.error(error);
       });
+          setShowModal(false);
+
   }, []);
 
   const handleEdit = async (id) => {
     setShowModal(true);
-    setFormData({
-      title: "",
-      author: "",
-      pages: "",
-      genre: "",
-      description: "",
-      image: "",
-      link: "",
-    });
   };
 
   const handleDelete = async (id) => {
@@ -71,8 +64,9 @@ const Dashboard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Add form submit logic here, including API call
     console.log(formData);
-    handleCloseModal(); 
+    handleCloseModal(); // Close modal after submitting form
   };
 
   return (
@@ -88,24 +82,24 @@ const Dashboard = () => {
             <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
-            <label htmlFor="width" className="block text-gray-700 font-bold mb-2">Author:</label>
-            <input type="text" id="width" name="width" value={formData.author} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
+            <label htmlFor="author" className="block text-gray-700 font-bold mb-2">Author:</label>
+            <input type="text" id="author" name="author" value={formData.author} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
-            <label htmlFor="width" className="block text-gray-700 font-bold mb-2">pages:</label>
-            <input type="text" id="width" name="width" value={formData.pages} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
+            <label htmlFor="pages" className="block text-gray-700 font-bold mb-2">pages:</label>
+            <input type="number" id="pages" name="pages" value={formData.pages} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
-            <label htmlFor="width" className="block text-gray-700 font-bold mb-2">genre:</label>
-            <input type="text" id="width" name="width" value={formData.genre} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
+            <label htmlFor="genre" className="block text-gray-700 font-bold mb-2">genre:</label>
+            <input type="text" id="genre" name="genre" value={formData.genre} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
-            <label htmlFor="width" className="block text-gray-700 font-bold mb-2">description:</label>
-            <input type="text" id="width" name="width" value={formData.description} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
+            <label htmlFor="description" className="block text-gray-700 font-bold mb-2">description:</label>
+            <input type="text" id="description" name="description" value={formData.description} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           <div className="mb-4">
-            <label htmlFor="width" className="block text-gray-700 font-bold mb-2">image:</label>
-            <input type="text" id="width" name="width" value={formData.image} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
+            <label htmlFor="image" className="block text-gray-700 font-bold mb-2">image:</label>
+            <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} className="text-gray-700 border rounded-md px-3 py-2 w-full" />
           </div>
           
           <div className="mb-4">
