@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import BookTable from "../Components/bookTable";
-import { Modal } from "../Components/Modal";
+import { useState, useEffect } from "react";
+import BookTable from "../../Components/BookTable";
+import { Modal } from "../../Components/Modal";
 
 const Dashboard = () => {
   const [books, setBooks] = useState([]);
