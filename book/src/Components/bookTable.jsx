@@ -1,4 +1,3 @@
-// BookTable.js
 
 import React from 'react';
 

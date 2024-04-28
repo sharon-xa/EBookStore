@@ -7,11 +7,10 @@ const prisma = new PrismaClient();
 
 export const DELETE = async (req, {params}) => {
   const { id } = params;
-console.log(id)
   try {
     const book = await prisma.books.delete({
       where: {
-        Id: Number(id),
+        id: Number(id),
       },
     });
     
@@ -34,7 +33,6 @@ console.log(id)
 export const PUT = async (req, {params}) => {
   const { id } = params;
   const body = await req.json();
-console.log(id)
   try {
     const book = await prisma.books.update({
       where: {
