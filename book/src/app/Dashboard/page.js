@@ -134,6 +134,7 @@ const Dashboard = () => {
 
       <Modal
         open={showModal}
+        onOK={handleSubmit}
         onCancel={handleCloseModal}
         title={formData.id ? "Edit Book" : "Add Book"}
       >
